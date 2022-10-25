@@ -2,7 +2,6 @@
 from flask import Flask, send_from_directory, redirect
 
 
-
 app = Flask(__name__, static_url_path='', static_folder='ui/build/')
 
 @app.route('/')
@@ -18,9 +17,10 @@ def index2():
 
 @app.route('/checkin')
 def checkIn_hardware(projectId, qty):
+    
     if qty is None:
         qty = 0
-    return f' {qty} hardware checked in'
+    return f'  hardware checked in'
 
 
 @app.route('/join')
@@ -33,13 +33,14 @@ def joinProject(projectId):
 def leaveProject(projectId):
     if projectId is None:
         projectId = 1
-    return f'Left {id}'.format(projectId)
+    #return f'Left {id}'.format(projectId)
+    return 'Left ' + str(projectId)
 
 @app.route('/checkout')
 def checkOut_hardware(projectId, qty):
     if qty is None:
         qty = 0
-    return f' {qty} hardware checked out'
+    return f' hardware checked out'
 
 
 if __name__ == '__main__':
