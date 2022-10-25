@@ -18,19 +18,27 @@ def index2():
 
 @app.route('/checkin')
 def checkIn_hardware(projectId, qty):
+    if qty is None:
+        qty = 0
     return f' {qty} hardware checked in'
 
 
 @app.route('/join')
 def joinProject(projectId):
+    if projectId is None:
+        projectId = 1
     return f'Joined {projectId}'.format(projectId)
 
 @app.route('/leave')
 def leaveProject(projectId):
+    if projectId is None:
+        projectId = 1
     return f'Left {id}'.format(projectId)
 
 @app.route('/checkout')
 def checkOut_hardware(projectId, qty):
+    if qty is None:
+        qty = 0
     return f' {qty} hardware checked out'
 
 
