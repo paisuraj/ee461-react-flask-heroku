@@ -40,7 +40,7 @@ def leaveProject(projectId):
 def checkOut_hardware(projectId, qty):
     if qty is None:
         qty = 0
-    return f' hardware checked out'
+    print(qty + 'hardware checked out')
 
 
 if __name__ == '__main__':
