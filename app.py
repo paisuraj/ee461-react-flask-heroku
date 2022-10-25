@@ -22,27 +22,27 @@ def checkIn_hardware(projectId=None, qty=None):
         qty = 0
     if projectId is None:
         projectId = 1
-    return f'  hardware checked in'
+    return f'{qty} hardware checked in'
 
 
 @app.route('/join')
 def joinProject(projectId=None):
     if projectId is None:
         projectId = 1
-    return f'Joined {projectId}'.format(projectId)
+    return f'Joined {projectId}'
 
 @app.route('/leave')
 def leaveProject(projectId=None):
     if projectId is None:
         projectId = 1
     #return f'Left {id}'.format(projectId)
-    return 'Left ' + str(projectId)
+    return f'Left {projectId}'
 
 @app.route('/checkout')
 def checkOut_hardware(projectId=None, qty=None):
     if qty is None:
         qty = 0
-    return f' {qty} hardware checked in'
+    return f' {qty} hardware checked out'
 
 
 if __name__ == '__main__':
